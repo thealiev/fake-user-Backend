@@ -1,4 +1,3 @@
-require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 
@@ -157,9 +156,9 @@ app.post("/api/userData", (req, res) => {
   } catch (error) {
     console.error("Error generating user data:", error);
     res.status(400).json({ success: false, error: error.message });
-    res.json({ success: true, data: userData });
   }
 });
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
