@@ -1,7 +1,10 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 
 const app = express();
+const PORT = process.env.PORT || 4000;
+
 
 app.use(express.json());
 app.use(cors());
@@ -122,7 +125,6 @@ const generateUserData = (
   return userData;
 };
 
-
 app.post("/api/userData", (req, res) => {
   try {
     const {
@@ -159,6 +161,6 @@ app.post("/api/userData", (req, res) => {
   }
 });
 
-app.listen(process.env.PORT || 4000, () => {
+app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
